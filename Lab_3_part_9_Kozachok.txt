@@ -1,0 +1,51 @@
+using System;
+
+namespace Yuliya
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+          Console.WriteLine("Введите размерность первого мвссива:");
+          int size_A = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Заполните массив А:");
+            int[] array_A = new int[size_A];
+            for (int i = 0; i < size_A; i++)
+            {
+                Console.Write("A["+i+"] = ");
+                array_A[i]=Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Введите размерность второго массива:");
+            int size_B = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Заполните массив А:");
+            int[] array_B = new int[size_B];
+            for (int i = 0; i < size_B; i++)
+            {
+                Console.Write("B["+i+"] = ");
+                array_B[i]=Convert.ToInt32(Console.ReadLine());
+            }
+
+            int[]array_C = new int[size_A+size_B/2];
+            for (int i = 0; i < size_A; i++)
+            {
+              array_C[i]=array_A[i];  
+            }
+            int j=0;
+            for (int i = 0; i < size_B; i++)
+            {
+
+              if (i%2!=0)
+              {
+                array_C[size_A+j]=array_B[i];
+                j++;  
+              }
+            }
+            Console.WriteLine("Полученный массив:");
+            for (int i = 0; i < size_A + size_B/2; i++)
+            {
+                Console.WriteLine("C["+i+"] = "+array_C[i]);
+            }
+        }
+    }
+}
